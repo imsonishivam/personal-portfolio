@@ -1,23 +1,41 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-const Header = () => {
+const Header = ({ menuOpen, setMenuopen }) => {
   return (
-    <nav>
-      <NavContent />
-    </nav>
+    <div className="header">
+      <nav>
+        <NavContent />
+      </nav>
+      <button className="navBtn" onClick={() => setMenuopen(!menuOpen)}>
+        <GiHamburgerMenu />
+      </button>
+    </div>
   );
 };
 
-const NavContent = () => (
+export const NavContent = ({ setMenuopen }) => (
   <>
     <h2>Shivam Soni.</h2>
     <div>
-      <a href="#home">Home</a>
-      <a href="#work">Work</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#services">Services</a>
-      <a href="#testimonial">Testimonial</a>
-      <a href="#contact">Contact</a>
+      <a onClick={() => setMenuopen(false)} href="#home">
+        Home
+      </a>
+      <a onClick={() => setMenuopen(false)} href="#work">
+        Work
+      </a>
+      <a onClick={() => setMenuopen(false)} href="#timeline">
+        Timeline
+      </a>
+      <a onClick={() => setMenuopen(false)} href="#services">
+        Services
+      </a>
+      <a onClick={() => setMenuopen(false)} href="#testimonial">
+        Testimonial
+      </a>
+      <a onClick={() => setMenuopen(false)} href="#contact">
+        Contact
+      </a>
     </div>
     <a href="mailto:imsonishivam@gmail.com">
       <button>Email</button>

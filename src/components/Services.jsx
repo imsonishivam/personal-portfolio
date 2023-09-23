@@ -30,18 +30,14 @@ const Services = () => {
           <h3>0+</h3>
           <span>Years Experience</span>
         </motion.div>
-        <motion.div className="serviceBox2">
+        <div className="serviceBox2">
           <AiFillIeCircle />
           <span>Web Development</span>
-        </motion.div>
-        <motion.div
-          className="serviceBox2"
-          whileInView={animations.whileInView}
-          initial={animations.three}
-        >
+        </div>
+        <div className="serviceBox2">
           <AiFillWindows />
           <span>Desktop Development</span>
-        </motion.div>
+        </div>
       </section>
     </div>
   );

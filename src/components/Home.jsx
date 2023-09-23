@@ -3,7 +3,7 @@ import { animate, motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { BsArrowUpRight, BsChevronDown } from "react-icons/bs";
 
-const Home = () => {
+const Home = ({ ratio }) => {
   const clientCount = useRef(null);
   const projectCount = useRef(null);
   const animationCount = (isFor) => {
@@ -55,10 +55,8 @@ const Home = () => {
 
           <Typewriter
             options={{
-              strings: [
-                "A Frontend Developer",
-                "Have Work experience in ReactJs",
-              ],
+              strings: ["A Developer", "In ReactJs"],
+              cursor: "",
               autoStart: true,
               loop: true,
               wrapperClassName: "typeWriterPara",
@@ -75,10 +73,12 @@ const Home = () => {
           <article>
             <p>
               +
-              <motion.span
-                whileInView={() => animationCount("clientCount")}
-                ref={clientCount}
-              ></motion.span>
+              {ratio < 2 && (
+                <motion.span
+                  whileInView={() => animationCount("clientCount")}
+                  ref={clientCount}
+                ></motion.span>
+              )}
             </p>
             <span>Clients WorldWide</span>
           </article>
@@ -87,10 +87,12 @@ const Home = () => {
             <article>
               <p>
                 +
-                <motion.span
-                  whileInView={() => animationCount("projectCount")}
-                  ref={projectCount}
-                ></motion.span>
+                {ratio < 2 && (
+                  <motion.span
+                    whileInView={() => animationCount("projectCount")}
+                    ref={projectCount}
+                  ></motion.span>
+                )}
               </p>
               <span>Projects Done</span>
             </article>

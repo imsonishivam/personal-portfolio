@@ -23,7 +23,7 @@ function App() {
       window.removeEventListener("resize", resizeRatio);
     };
   }, [ratio]);
-  return ratio < 2 ? (
+  return ratio < 3 ? (
     <div className="App">
       <HeaderPhone setMenuopen={setMenuopen} menuOpen={menuOpen} />
       <Header menuOpen={menuOpen} setMenuopen={setMenuopen} />
